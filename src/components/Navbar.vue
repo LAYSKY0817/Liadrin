@@ -1,27 +1,24 @@
 <template>
     <div class="navbar" ref="navbar">
         <div class="navbar-container">
-            <!-- 三横杠图标 -->
             <button class="menu-icon" @click="toggleMenu">
-                &#9776; <!-- 三横杠图标 -->
+                &#9776; 
             </button>
-
-            <!-- 导航链接列表 -->
             <ul class="nav-links" :class="{ 'show-menu': isMenuOpen }">
                 <li>
                     <router-link to="/">首页</router-link>
                 </li>
                 <li>
-                    <router-link to="/">关于xx</router-link>
+                    <router-link to="/introduction">关于xx</router-link>
                 </li>
                 <li>
-                    <router-link to="/">下载中心</router-link>
+                    <router-link to="/download">下载中心</router-link>
                 </li>
                 <li>
-                    <router-link to="/">常见问题</router-link>
+                    <router-link to="/faq">常见问题</router-link>
                 </li>
                 <li>
-                    <router-link to="/">联系我们</router-link>
+                    <router-link to="/contact">联系我们</router-link>
                 </li>
                 <li>
                     <router-link to="/login">登录/注册</router-link>
@@ -51,11 +48,9 @@ export default {
         },
     },
     mounted() {
-        // 在全局添加点击事件监听器
         document.addEventListener('click', this.handleClickOutside);
     },
     beforeUnmount() {
-        // 在组件销毁前移除监听器，避免内存泄漏
         document.removeEventListener('click', this.handleClickOutside);
     },
 };

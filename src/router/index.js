@@ -8,9 +8,18 @@ import RegisterPage from '../views/LoginPages.vue'
 import ContactPage from '../views/ContactPage.vue';
 import DownloadPage from '../views/DownloadPage.vue';
 import FaqPage from '../views/FaqPage.vue';
+import IntroductionPage from '../views/IntroductionPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savePosition)
+  {
+    if (savePosition) {
+      return savePosition;
+    } else {
+      return { top: 0, behavior: 'auto' };
+    }
+  },
   routes: [
     
     {
@@ -61,6 +70,11 @@ const router = createRouter({
       path: '/faq',
       name: 'FaqPage',
       component: FaqPage,
+    },
+    {
+      path: '/introduction',
+      name: 'IntroductionPage',
+      component:IntroductionPage,
     }
   ]
 })

@@ -13,7 +13,10 @@ export default {
 
 <style scoped>
 div {
-
+    padding: 30px;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
     color: black;
 }
 </style>

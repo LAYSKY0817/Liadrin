@@ -1,38 +1,42 @@
 <template>
-    <footer class="footer">
-        <div class="foot-container">
-            <div class="footer-logo">
-                <img src="./image/logo.jpg" alt="logo">
-            </div>
-            <div class="footer-copyright">
-                <p>© 2024 LAYSKY. All Rights Reserved.</p>
-            </div>
-            <div class="footer-nav">
-                <h3>导航</h3>
-                <ul>
-                    <li><router-link to="/">首页</router-link></li>
-                    <li><router-link to="/">关于xx</router-link></li>
-                    <li><router-link to="/dowload">下载中心</router-link></li>
-                    <li><router-link to="/faq">常见问题</router-link></li>
-                    <li><router-link to="/contact">联系我们</router-link></li>
-                </ul>
-            </div>
-            <div class="footer-contact">
-                <h3>联系我们</h3>
-                <p>
-                    地址：XX市XX路XX号XX大��
-                    <br>
-                    电话：000-0000-0000
-                    <br>
-                    邮箱：info@xx.com
-                </p>
-            </div>
+    <footer id="footer">
+        <!-- <div class="foot-container"> -->
+        <div>
 
-            <div class="footer-qrcode">
-                <h3>关注我们</h3>
-                <img src='../assets/images/' alt="qrcode">
-            </div>
         </div>
+        <div class="footer-logo">
+            <img src="../assets/images/logo.jpg" alt="logo">
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 LAYSKY. All Rights Reserved.</p>
+        </div>
+        <div class="footer-nav">
+            <ul>
+                <li><router-link to="/">首页</router-link></li>
+                <li><router-link to="/introduction">关于XX</router-link></li>
+                <li><router-link to="/download">下载中心</router-link></li>
+                <li><router-link to="/faq">常见问题</router-link></li>
+                <li><router-link to="/contact">联系我们</router-link></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>联系我们</h3>
+            <p>
+                地址：XX市XX路XX号XX大街
+                <br>
+                电话：000-0000-0000
+                <br>
+                邮箱：info@xx.com
+            </p>
+        </div>
+        <div class="footer-qrcode">
+            <h3>关注我们</h3>
+            <img src='../assets/images/qrcode.jpg' alt="qrcode">
+        </div>
+        <div>
+
+        </div>
+
     </footer>
 </template>
 
@@ -43,28 +47,22 @@ export default {
 </script>
 
 <style scoped>
-.footer {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    height: 500px;
-    background-color: #383838;
-    color: #fff;
-    padding: 40px 0;
-    margin-top: 80px;
-}
-.footer-container {
+
+#footer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap:20px;
-    justify-content: center;
-    margin: 0 auto;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 20px;
+    width: 100vw;
+    height: 300px;
+    background-color: #383838;
+    color: #ffffff;
+    padding-top: 50px;
+    margin-top: 50px;
 }
 
 .footer-logo {
+
     text-align: center;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -75,17 +73,24 @@ export default {
     margin-bottom: 10px;
 }
 
-.footer-nav,
+
+
 .footer-contact{
-    margin: 20px;
+
+    text-align: start;
 }
 
 .footer-copyright {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    text-align: start;
+
     justify-content: center;
     align-items: center;
+}
+
+.footer-nav {
+
+    text-align: start;
+    
 }
 
 .footer-nav h3,
@@ -114,14 +119,13 @@ export default {
     text-decoration: underline;
 }
 .footer-qrcode {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: 4/5;
+    text-align: start;
     justify-content: center;
     align-items: center;
 }
 .footer-qrcode img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 </style>

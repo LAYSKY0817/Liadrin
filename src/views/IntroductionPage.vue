@@ -1,13 +1,13 @@
 <template>
     <div>
-        <h1>Dowload Page</h1>
-        <p>This page displays content for DowloadPage </p>
+        <h1>Introduction Page</h1>
+        <p>This page displays content for IntroductionPage </p>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'DowloadPage',
+    name: 'IntroductionPage',
 };
 </script>
 

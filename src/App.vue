@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <Navbar v-if="!$route.meta.hideNavbar"/>
     <router-view />
     <FooterComponent v-if="showFooter"/>
@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     showFooter() {
-      return this.$route.name !== 'LoginPage';
+      return this.$route.name !== 'LoginPages';
     }
   }
 };
@@ -29,14 +29,12 @@ export default {
 *{
   box-sizing: border-box;
 }
-#app {
+.app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  /* 确保页面总高度为视口高度 */
 }
 
 /* router-view 区域应当弹性扩展占据空间 */
@@ -46,7 +44,8 @@ router-view {
 }
 
 /* 确保页脚占据最底部 */
-footer {
+FooterComponent {
+
   width: 100%;
   /* 页脚的宽度应始终占满页面宽度 */
 }

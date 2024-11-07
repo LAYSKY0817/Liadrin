@@ -10,7 +10,7 @@
 <script>
 import PicCarouselComponent from '../components/PicCarousel.vue';
 import CardsComponent from '../components/CardsComponent.vue';
-// import NavbarPage from '../components/Navbar.vue'; // 导入 Navbar 组件
+
 
 export default {
     name: 'HomePage',

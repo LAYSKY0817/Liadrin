@@ -1,60 +1,41 @@
 <template>
     <div class="auth-wrapper">
         <div class="auth-container">
-        <!-- 左半部分，纯色背景 -->
-        <div class="auth-left">
-            <h2>欢迎回来！</h2>
-        </div>
-
-        <!-- 右半部分，表单 -->
-        <div class="auth-right">
-            <div class="auth-right-content">
-            <h2>账号登录</h2>
-            <form @submit.prevent="handleLogin">
-                <div class="form-group">
-                <label for="username">账号</label>
-                <input
-                    type="text"
-                    id="username"
-                    v-model="username"
-                    required
-                    placeholder="请输入手机号/邮箱地址/账户名"
-                />
-                </div>
-
-                <div class="form-group password-group">
-                <label for="password">密码</label>
-                <div class="password-wrapper">
-                    <input
-                    :type="showPassword ? 'text' : 'password'"
-                    id="password"
-                    v-model="password"
-                    required
-                    placeholder="请输入密码"
-                    />
-                    <button
-                    type="button"
-                    class="toggle-password"
-                    @click="togglePasswordVisibility"
-                    >
-                    <font-awesome-icon :icon="showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'" />
-                    </button>
-                </div>
-                </div>
-
-                <button type="submit" class="submit-btn">登录</button>
-            </form>
-
-            <!-- 链接 -->
-            <div class="switch-auth">
-                <p>
-                <router-link to="/register">注册</router-link> |
-                <router-link to="/forgot-password">忘记密码</router-link> |
-                <router-link to="/help">遇到问题</router-link>
-                </p>
+            <div class="auth-left">
+                <h2>欢迎回来！</h2>
             </div>
+            <div class="auth-right">
+                <div class="auth-right-content">
+                    <h2>账号登录</h2>
+                    <form @submit.prevent="handleLogin">
+                        <div class="form-group">
+                            <label for="username">账号</label>
+                            <input type="text" id="username" v-model="username" required
+                                placeholder="请输入手机号/邮箱地址/账户名" />
+                        </div>
+                        <div class="form-group password-group">
+                            <label for="password">密码</label>
+                            <div class="password-wrapper">
+                                <input :type="showPassword ? 'text' : 'password'" id="password" v-model="password"
+                                    required placeholder="请输入密码" />
+                                <button type="button" class="toggle-password" @click="togglePasswordVisibility">
+                                    <font-awesome-icon
+                                        :icon="showPassword ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash'" />
+                                </button>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">登录</button>
+                    </form>
+
+                    <div class="switch-auth">
+                        <p>
+                            <router-link to="/register">注册</router-link> |
+                            <router-link to="/forgot-password">忘记密码</router-link> |
+                            <router-link to="/faq">遇到问题</router-link>
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     </div>
 </template>
@@ -66,15 +47,13 @@ export default {
         return {
         username: '',
         password: '',
-        showPassword: false, // 用于跟踪密码的可见状态
+        showPassword: false,
         };
     },
     methods: {
         handleLogin() {
-        // 登录逻辑
         if (this.username && this.password) {
             console.log('登录成功:', { username: this.username, password: this.password });
-            // 跳转到首页或其他页面
             this.$router.push('/');
         } else {
             alert('请输入用户名和密码');
@@ -88,7 +67,6 @@ export default {
 </script>
 
 <style scoped>
-/* 外层包装容器，让内容始终居中 */
 .auth-wrapper {
     display: flex;
     justify-content: center;
@@ -97,21 +75,20 @@ export default {
     margin: 10vh auto;
 }
 
-/* 登录卡片容器，设置为水平排列 */
 .auth-container {
     display: flex;
-    width: 1000px; /* 整个卡片的宽度 */
-    height: 450px; /* 整个卡片的高度 */
+    width: 1000px; 
+    height: 450px; 
     background-color: #ffffff;
     border-radius: 10px;
-    overflow: hidden; /* 隐藏溢出的部分 */
+    overflow: hidden; 
     box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 左半部分样式 */
+
 .auth-left {
-    flex: 1; /* 占据一半的空间 */
-    background-color: #4caf50; /* 纯色背景，可根据需要修改 */
+    flex: 1; 
+    background-color: #7477c2; 
     color: white;
     display: flex;
     justify-content: center;
@@ -123,15 +100,13 @@ export default {
     
 }
 
-/* 右半部分样式 */
 .auth-right {
-    flex: 1; /* 占据另一半空间 */
+    flex: 1; 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* 内部容器，添加 padding */
 .auth-right-content {
     padding: 60px;
     width: 100%;
@@ -145,7 +120,7 @@ export default {
 
 .form-group {
     margin-bottom: 15px;
-    position: relative; /* 为了定位眼睛图标 */
+    position: relative; 
 }
 
 label {
@@ -163,7 +138,7 @@ input {
     border: 1px solid rgb(3, 3, 3)000;
 }
 
-/* 密码输入框和眼睛图标的容器 */
+
 .password-group {
     position: relative;
 }
@@ -186,7 +161,7 @@ input {
 button.submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #4caf50;
+    background-color: #7477c2;
     color: white;
     border: none;
     border-radius: 5px;
@@ -196,7 +171,7 @@ button.submit-btn {
 }
 
 button.submit-btn:hover {
-    background-color: #45a049;
+    background-color: #313374;
 }
 
 .switch-auth {
@@ -204,9 +179,8 @@ button.submit-btn:hover {
     margin-top: 15px;
 }
 
-/* 链接样式 */
 .switch-auth a {
-    color: #4caf50;
+    color: #7477c2;
     text-decoration: none;
     margin: 0 5px;
 }
@@ -224,7 +198,7 @@ button.submit-btn:hover {
 
 .password-wrapper input {
     width: 100%;
-    padding-right: 40px; /* 为按钮留出空间 */
+    padding-right: 40px; 
 }
 
 .toggle-password {
@@ -242,7 +216,7 @@ button.submit-btn:hover {
 .toggle-password:focus {
     outline: none;
 }
-/* 隐藏 Chrome 和 Edge 中的浏览器内置眼睛图标 */
+
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear,
 input[type="password"]::-webkit-credentials-auto-fill-button,
