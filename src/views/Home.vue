@@ -29,7 +29,7 @@ body {
     min-block-size: 100%;
     display: grid;
     place-content: center;
-    padding-block: 15dvh;
+    padding-top: 15dvh;
     background: #fefaff;/*fcf2ff*/
 }
 .page-container {

@@ -12,6 +12,18 @@
                     <router-link to="/">首页</router-link>
                 </li>
                 <li>
+                    <router-link to="/">关于xx</router-link>
+                </li>
+                <li>
+                    <router-link to="/">下载中心</router-link>
+                </li>
+                <li>
+                    <router-link to="/">常见问题</router-link>
+                </li>
+                <li>
+                    <router-link to="/">联系我们</router-link>
+                </li>
+                <li>
                     <router-link to="/login">登录/注册</router-link>
                 </li>
             </ul>
@@ -24,7 +36,7 @@ export default {
     name: 'NavbarPage',
     data() {
         return {
-            isMenuOpen: false, // 菜单初始状态是关闭的
+            isMenuOpen: false,
         };
     },
     methods: {

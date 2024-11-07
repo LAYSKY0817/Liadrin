@@ -3,8 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/Home.vue'
 import TextPage from '../views/TextPage.vue'
 import ImagePage from '../views/ImagePage.vue'
-import LoginPages from '../components/LoginPages.vue'
-import RegisterPage from '../components/LoginPages.vue'
+import LoginPages from '../views/LoginPages.vue'
+import RegisterPage from '../views/LoginPages.vue'
+import ContactPage from '../views/ContactPage.vue';
+import DownloadPage from '../views/DownloadPage.vue';
+import FaqPage from '../views/FaqPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +46,22 @@ const router = createRouter({
         hideNavbar: true
       }
     },
+    {
+      path: '/contact',
+      name: 'ContactPage',
+      component: ContactPage,
+    },
+    {
+      path: '/download',
+      name: 'DownloadPage',
+      component: DownloadPage,
+
+    },
+    {
+      path: '/faq',
+      name: 'FaqPage',
+      component: FaqPage,
+    }
   ]
 })
 
