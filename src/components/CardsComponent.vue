@@ -1,16 +1,20 @@
+<!-- eslint-disable no-undef -->
 <template>
     <div class="cards">
         <div v-for="(item, index) in cards" :key="index" class="card"
             @click="item.type === 'text' && navigateToPage(index)" ref="cards">
             <div v-if="item.type === 'text'">TEXT {{ index + 1 }}</div>
-            <img v-else :src="item.imgSrc" alt="Image" />
+            <img v-else :data-src="item.imgSrc" class="lazy" alt="Image" />
         </div>
     </div>
-    <!-- 页面结束标识 div -->
+    
     <div ref="pageEnd" class="page-end">页面结束————————</div>
 </template>
 
 <script>
+import banner1 from '@/assets/images/banner1.jpg';
+
+
 export default {
     name: 'CardsComponent',
     data() {
@@ -20,7 +24,7 @@ export default {
                 { type: 'text' },
                 { type: 'text' },
                 { type: 'text' },
-                { type: 'image', imgSrc: './images/banner1.jpg' },
+                { type: 'image', imgSrc: banner1},
                 { type: 'text' },
                 { type: 'text' },
                 { type: 'text' },
@@ -54,7 +58,28 @@ export default {
             
         };
     },
+    mounted() {
+        this.initLazyLoad();
+    },
     methods: {
+        initLazyLoad() {
+            const lazyImages = this.$refs.cards.flatMap(card => {
+                return Array.from(card.querySelectorAll('img.lazy'));
+            });
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            lazyImages.forEach((img) => {
+                observer.observe(img);
+            });
+        },
         navigateToPage(index) {
             this.$router.push({ name: 'TextPage', params: { id: index + 1 } });
         },
@@ -68,7 +93,14 @@ export default {
     padding: 0;
     margin: 0;
 }
+.lazy{
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+}
 
+.lazy[src]{
+    opacity: 1;
+}
 @keyframes slide-fade-in {
     from {
         opacity: 0;
