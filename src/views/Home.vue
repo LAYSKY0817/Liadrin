@@ -1,21 +1,23 @@
 <template>
+    <keep-alive>
     <div class="page-container">
         
-        <PicCarouselComponent />
-        <CardsComponent />
-
+            <PicCarouselComponent />
+            <!-- <CardsComponent /> -->
+        
     </div>
+    </keep-alive>
 </template>
 
 <script>
 import PicCarouselComponent from '../components/PicCarousel.vue';
-import CardsComponent from '../components/CardsComponent.vue';
+// import CardsComponent from '../components/CardsComponent.vue';
 
 
 export default {
     name: 'HomePage',
     components: {
-        CardsComponent,
+        // CardsComponent,
         PicCarouselComponent,
         // NavbarPage,
     },
@@ -33,6 +35,7 @@ body {
     background: #fefaff;/*fcf2ff*/
 }
 .page-container {
+    
     display: flex;
     flex-direction: column;
     align-items: center;

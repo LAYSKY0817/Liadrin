@@ -21,7 +21,7 @@
                     <router-link to="/contact">联系我们</router-link>
                 </li>
                 <li>
-                    <router-link to="/login">登录/注册</router-link>
+                    <router-link to="/login">登录</router-link>
                 </li>
             </ul>
         </div>
@@ -104,7 +104,7 @@ export default {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
     .menu-icon {
         display: block;
         margin-left: auto;

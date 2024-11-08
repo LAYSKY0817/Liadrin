@@ -1,22 +1,45 @@
 <template>
-    <div>
-        <h1>Dowload Page</h1>
-        <p>This page displays content for DowloadPage </p>
+    <keep-alive>
+    <div class="page-container">
+        
+            
+            <CardsComponent />
+        
     </div>
+    </keep-alive>
 </template>
 
 <script>
+import CardsComponent from '../components/CardsComponent.vue';
+
+
 export default {
-    name: 'DowloadPage',
+    name: 'HomePage',
+    components: {
+        CardsComponent,
+        
+        // NavbarPage,
+    },
 };
 </script>
 
-<style scoped>
-div {
-    padding: 30px;
-    text-align: center;
-    width: 100vw;
-    height: 100vh;
-    color: black;
+<style >
+/* Global styles here */
+body {
+    margin: 0;
+    min-block-size: 100%;
+    display: grid;
+    place-content: center;
+    padding-top: 15dvh;
+    background: #fefaff;/*fcf2ff*/
 }
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+
 </style>

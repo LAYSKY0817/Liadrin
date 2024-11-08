@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import banner1 from '@/assets/images/banner1.jpg';
 
 
 export default {
@@ -24,7 +23,7 @@ export default {
                 { type: 'text' },
                 { type: 'text' },
                 { type: 'text' },
-                { type: 'image', imgSrc: banner1},
+                { type: 'image', imgSrc:'./images/banner1.jpg'},
                 { type: 'text' },
                 { type: 'text' },
                 { type: 'text' },
@@ -63,7 +62,7 @@ export default {
     },
     methods: {
         initLazyLoad() {
-            const lazyImages = this.$refs.cards.flatMap(card => {
+            const lazyLoad = this.$refs.cards.flatMap(card => {
                 return Array.from(card.querySelectorAll('img.lazy'));
             });
             const observer = new IntersectionObserver((entries, observer) => {
@@ -76,7 +75,7 @@ export default {
                     }
                 });
             });
-            lazyImages.forEach((img) => {
+            lazyLoad.forEach((img) => {
                 observer.observe(img);
             });
         },
@@ -111,6 +110,7 @@ export default {
 
 .cards {
     margin: auto;
+    margin-top: 230px;
     display: grid;
     gap: 2rem;
     grid-auto-flow: dense;
@@ -132,12 +132,12 @@ export default {
     height: 100%;
     overflow: hidden;
     background-image: linear-gradient(to bottom right,
-            #91defe,
-            #99c0f9,
-            #bdb6ec,
-            #d7b3e3,
-            #efb3d5,
-            #f9bccc);
+            #a5fff7,
+            #7df0ff,
+            #2aa7d0cb,
+            #2a6bcccb,
+            #14399dcb,
+            #11157fcb);
     display: flex;
     justify-content: center;
     align-items: center;

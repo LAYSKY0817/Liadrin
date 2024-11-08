@@ -1,7 +1,11 @@
 <template>
   <div class="app">
     <Navbar v-if="!$route.meta.hideNavbar"/>
-    <router-view />
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+        
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
     <FooterComponent v-if="showFooter"/>
   </div>
 </template>
@@ -32,7 +36,7 @@ export default {
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 75vh;
   margin: 0;
   padding: 0;
 }

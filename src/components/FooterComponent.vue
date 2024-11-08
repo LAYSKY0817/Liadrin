@@ -57,7 +57,7 @@ export default {
     background-color: #383838;
     color: #ffffff;
     padding-top: 50px;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .footer-logo {

@@ -26,6 +26,7 @@ const router = createRouter({
       path: '/',
       name: 'HomePage',
       component: HomePage,
+      meta: {keepAlive: true},
     },
     {
       path: '/text/:id',
