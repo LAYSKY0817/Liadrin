@@ -24,21 +24,20 @@ export default {
 };
 </script>
 
-<style >
-/* Global styles here */
+<style scoped>
 body {
     margin: 0;
     min-block-size: 100%;
     display: grid;
     place-content: center;
-    padding-top: 15dvh;
+    padding-top: 30vh;
     background: #fefaff;/*fcf2ff*/
 }
 .page-container {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 30vh;
+    width: 100vw;
+    height: 100vh;
+    color: black;
     
 }
 

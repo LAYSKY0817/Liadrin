@@ -12,7 +12,7 @@
         </div>
         <div class="footer-nav">
             <ul>
-                <li><router-link to="/">首页</router-link></li>
+                <li><router-link to="/home">首页</router-link></li>
                 <li><router-link to="/introduction">关于XX</router-link></li>
                 <li><router-link to="/download">下载中心</router-link></li>
                 <li><router-link to="/faq">常见问题</router-link></li>

@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* Global styles here */
 *{
   box-sizing: border-box;

@@ -76,7 +76,6 @@ export default {
 .carousel {
     position: relative;
     width: 100%;
-    height: 47.4vh;
     max-width: 1100px;
     overflow: hidden;
     margin: auto;
@@ -142,7 +141,7 @@ export default {
     margin: auto;
     padding: 0;
     align-items: center;
-    bottom: 37px;
+    bottom: 18px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;

@@ -110,7 +110,7 @@ export default {
 
 .cards {
     margin: auto;
-    margin-top: 230px;
+    margin-top: 80px;
     display: grid;
     gap: 2rem;
     grid-auto-flow: dense;
