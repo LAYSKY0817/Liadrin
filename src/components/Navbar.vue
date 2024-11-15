@@ -6,22 +6,22 @@
             </button>
             <ul class="nav-links" :class="{ 'show-menu': isMenuOpen }">
                 <li>
-                    <router-link to="/home">首页</router-link>
+                    <router-link to="/home" exact-active-class="active-link">首页</router-link>
                 </li>
                 <li>
-                    <router-link to="/introduction">关于xx</router-link>
+                    <router-link to="/introduction" exact-active-class="active-link">关于xx</router-link>
                 </li>
                 <li>
-                    <router-link to="/download">下载中心</router-link>
+                    <router-link to="/download" exact-active-class="active-link">下载中心</router-link>
                 </li>
                 <li>
-                    <router-link to="/faq">常见问题</router-link>
+                    <router-link to="/faq" exact-active-class="active-link">常见问题</router-link>
                 </li>
                 <li>
-                    <router-link to="/contact">联系我们</router-link>
+                    <router-link to="/contact" exact-active-class="active-link">联系我们</router-link>
                 </li>
                 <li>
-                    <router-link to="/login">登录</router-link>
+                    <router-link to="/login" exact-active-class="active-link">登录</router-link>
                 </li>
             </ul>
         </div>
@@ -85,16 +85,34 @@ export default {
 }
 
 .nav-links a {
-    color: rgb(100, 100, 100);
+
     text-decoration: none;
     font-size: 18px;
+    padding: 5px 1px;
+    position: relative;
 }
 
 .nav-links a:hover {
-    text-decoration: underline;
+    color:#7477c2;
 }
 
-/* 三横杠菜单图标（默认隐藏，仅在小屏幕显示） */
+.active-link{
+    color: #7477c2;
+    font-weight: bold;
+}
+
+.active-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:-19px;
+    width: 100%;
+    height: 3px;
+    background-color: #7477c2;
+    border-radius: 2px;
+}
+
+
 .menu-icon {
     display: none;
     background: none;

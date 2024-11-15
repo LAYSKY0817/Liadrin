@@ -1,4 +1,3 @@
-<!-- eslint-disable no-undef -->
 <template>
     <div class="cards">
         <div v-for="(item, index) in cards" :key="index" class="card"
