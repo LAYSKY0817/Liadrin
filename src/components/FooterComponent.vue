@@ -2,7 +2,6 @@
     <footer id="footer">
         <!-- <div class="foot-container"> -->
         <div>
-
         </div>
         <div class="footer-logo">
             <img src="../assets/images/logo.jpg" alt="logo">
@@ -12,7 +11,7 @@
         </div>
         <div class="footer-nav">
             <ul>
-                <li><router-link to="/home">首页</router-link></li>
+                <li><router-link to="/">首页</router-link></li>
                 <li><router-link to="/introduction">关于XX</router-link></li>
                 <li><router-link to="/download">下载中心</router-link></li>
                 <li><router-link to="/faq">常见问题</router-link></li>
@@ -26,7 +25,7 @@
                 <br>
                 电话：000-0000-0000
                 <br>
-                邮箱：info@xx.com
+                邮箱：xx@email.com
             </p>
         </div>
         <div class="footer-qrcode">
@@ -34,9 +33,7 @@
             <img src='../assets/images/qrcode.jpg' alt="qrcode">
         </div>
         <div>
-
         </div>
-
     </footer>
 </template>
 
@@ -73,16 +70,12 @@ export default {
     margin-bottom: 10px;
 }
 
-
-
 .footer-contact{
-
     text-align: start;
 }
 
 .footer-copyright {
     text-align: start;
-
     justify-content: center;
     align-items: center;
 }
@@ -119,7 +112,6 @@ export default {
     text-decoration: underline;
 }
 .footer-qrcode {
-    grid-template-columns: 4/5;
     text-align: start;
     justify-content: center;
     align-items: center;

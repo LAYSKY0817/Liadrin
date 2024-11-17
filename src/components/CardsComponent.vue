@@ -7,7 +7,7 @@
         </div>
     </div>
     
-    <div ref="pageEnd" class="page-end">页面结束————————</div>
+    <!-- <div ref="pageEnd" class="page-end">页面结束————————</div> -->
 </template>
 
 <script>
@@ -99,7 +99,8 @@ export default {
 .lazy[src]{
     opacity: 1;
 }
-@keyframes slide-fade-in {
+/*关键帧*/
+@keyframes slide-fade-in { 
     from {
         opacity: 0;
         box-shadow: none;

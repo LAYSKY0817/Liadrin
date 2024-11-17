@@ -53,7 +53,7 @@ export default {
     methods: {
         handleLogin() {
         if (this.username && this.password) {
-            console.log('登录成功:', { username: this.username, password: this.password });
+            //console.log('登录成功:', { username: this.username, password: this.password });
             this.$router.push('/');
         } else {
             alert('请输入用户名和密码');

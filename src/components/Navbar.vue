@@ -6,7 +6,7 @@
             </button>
             <ul class="nav-links" :class="{ 'show-menu': isMenuOpen }">
                 <li>
-                    <router-link to="/home" exact-active-class="active-link">首页</router-link>
+                    <router-link to="/" exact-active-class="active-link">首页</router-link>
                 </li>
                 <li>
                     <router-link to="/introduction" exact-active-class="active-link">关于xx</router-link>
@@ -61,7 +61,7 @@ export default {
     background-color: #fdf8ff;
     color: #fcf2ff;
     padding: 20px 50px;
-    position: fixed; /* 固定在顶部 */
+    position: fixed; 
     top: 0;
     left: 0;
     right: 0;
@@ -71,16 +71,16 @@ export default {
 
 .navbar-container {
     display: flex;
-    justify-content: center; /* 水平居中 */
+    justify-content: center; 
     align-items: center;
 }
 
 .nav-links {
     display: flex;
     list-style: none; /* 移除列表样式 */
-    gap: 50px;        /* 导航链接之间的间距 */
-    padding: 0;       /* 清除默认内边距 */
-    margin: 0;        /* 清除默认外边距 */
+    gap: 50px;
+    padding: 0;       
+    margin: 0;        
     transition: all 0.3s ease;
 }
 
@@ -134,9 +134,10 @@ export default {
         position: absolute;
         top: 60px; /* 根据导航栏高度调整 */
         right: 20px;
+        gap:20px;
         background-color: #fdf8ff;
         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-        padding: 10px;
+        padding: 15px;
         border-radius: 5px;
     }
 
@@ -148,5 +149,16 @@ export default {
         font-size: 16px;
         padding: 10px 0;
     }
+
+    .active-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:-4px;
+    width: 100%;
+    height: 3px;
+    background-color: #7477c2;
+    border-radius: 2px;
+}
 }
 </style>

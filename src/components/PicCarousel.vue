@@ -1,22 +1,18 @@
 <template>
     <div class="carousel">
-        <!-- 图片展示区域 -->
         <div class="carousel-track" :style="{ transform: `translateX(-${currentIndex * 100}%)` }">
             <div v-for="(image, index) in images" :key="index" class="carousel-slide">
                 <img :src="image.url" alt="carousel image" />
             </div>
         </div>
 
-        <!-- 左右导航按钮 -->
         <button class="carousel-button left" @click="prevSlide">‹</button>
         <button class="carousel-button right" @click="nextSlide">›</button>
 
-        <!-- 图片标题和背景颜色 -->
         <div class="carousel-footer" :style="{ backgroundColor: currentImage.color }">
             <p>{{ currentImage.title }}</p>
         </div>
-
-        <!-- 底部指示器 -->
+        
         <div class="carousel-indicators">
             <span v-for="(image, index) in images" :key="index" class="indicator"
                 :class="{ active: index === currentIndex }" @click="goToSlide(index)"></span>

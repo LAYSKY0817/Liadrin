@@ -23,7 +23,7 @@ const router = createRouter({
   routes: [
     
     {
-      path: '/home',
+      path: '/',
       name: 'HomePage',
       component: HomePage,
       meta: {keepAlive: true},
